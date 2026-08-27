@@ -230,7 +230,7 @@ class GameRepository(context: Context) {
                 )
             )
         )
-        return if (gems > 0) "$coinsコイン + $gemsジェム獲得！ 連続${streak}日" else "$coinsコイン獲得！ 連続${streak}日"
+        return if (gems > 0) "${coins}コイン + ${gems}ジェム獲得！ 連続${streak}日" else "${coins}コイン獲得！ 連続${streak}日"
     }
 
     fun claimDailyQuest(quest: DailyQuest): String {
@@ -273,7 +273,7 @@ class GameRepository(context: Context) {
                 daily = current.daily.copy(miniGames = current.daily.miniGames + 1)
             )
         )
-        return if (gemBonus > 0) "$score点！ $rewardコイン + 1ジェム獲得" else "$score点！ $rewardコイン獲得"
+        return if (gemBonus > 0) "${score}点！ ${reward}コイン + 1ジェム獲得" else "${score}点！ ${reward}コイン獲得"
     }
 
     fun exportSave(): String = encode(normalize(state))
